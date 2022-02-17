@@ -20,6 +20,6 @@ jobs:
           go-version: 1.17
 
       - name: Run Tests
-        run:
-          cd test/
+        script: |
+          cd test
           go test -v ./...
