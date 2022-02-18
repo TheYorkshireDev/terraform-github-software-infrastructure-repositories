@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestIT_InputOutputExample(t *testing.T) {
+func InputOutputExampleWithInputs(t *testing.T) {
 	//
 	// Arrange
 	//
@@ -61,7 +61,7 @@ func TestIT_InputOutputExample(t *testing.T) {
 	assert.Equal(t, inputVariable, output)
 }
 
-func TestIT_InputOutputExample_Default(t *testing.T) {
+func InputOutputExampleWithDefaults(t *testing.T) {
 	//
 	// Arrange
 	//
