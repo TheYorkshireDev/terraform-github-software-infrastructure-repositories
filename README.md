@@ -1,1 +1,1 @@
-# terraform-github-project-repositories
+# terraform-github-software-infrastructure-repositories
