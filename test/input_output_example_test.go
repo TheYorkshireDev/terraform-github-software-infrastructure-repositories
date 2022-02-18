@@ -9,6 +9,9 @@ import (
 )
 
 func TestIT_InputOutputExample(t *testing.T) {
+	//
+	// Arrange
+	//
 	inputVariable := "input"
 
 	tfOptions := &terraform.Options{
@@ -18,6 +21,9 @@ func TestIT_InputOutputExample(t *testing.T) {
 		},
 	}
 
+	//
+	// Act
+	//
 	defer terraform.Destroy(t, tfOptions)
 
 	// Run `terraform init`
@@ -47,19 +53,27 @@ func TestIT_InputOutputExample(t *testing.T) {
 
 	t.Log(apply)
 
-	// Assertions
+	//
+	// Assert
+	//
 	output := terraform.Output(t, tfOptions, "output_var")
 
 	assert.Equal(t, inputVariable, output)
 }
 
 func TestIT_InputOutputExample_Default(t *testing.T) {
+	//
+	// Arrange
+	//
 	expectedVariable := "xxx"
 
 	tfOptions := &terraform.Options{
 		TerraformDir: "../examples/input-output",
 	}
 
+	//
+	// Act
+	//
 	defer terraform.Destroy(t, tfOptions)
 
 	// Run `terraform init`
@@ -89,7 +103,9 @@ func TestIT_InputOutputExample_Default(t *testing.T) {
 
 	t.Log(apply)
 
-	// Assertions
+	//
+	// Assert
+	//
 	output := terraform.Output(t, tfOptions, "output_var")
 
 	assert.Equal(t, expectedVariable, output)
