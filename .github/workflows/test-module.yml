@@ -13,6 +13,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_OWNER: project-manager-testing
+      TF_IN_AUTOMATION: true
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
