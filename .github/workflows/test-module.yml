@@ -10,6 +10,9 @@ jobs:
   terraform:
     name: "TerraTest"
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_OWNER: project-manager-testing
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -19,7 +22,7 @@ jobs:
         with:
           go-version: 1.17
 
-      - name: Run Tests
+      - name: Run Intergration Tests
         run: |
           cd test
           go test -v ./...
