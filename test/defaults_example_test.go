@@ -3,35 +3,37 @@ package main
 import (
 	"log"
 	"testing"
+
+	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
 func TestDefaultsExampleWithOnlyRequiredInputs(t *testing.T) {
 	//
 	// Arrange
 	//
-	// repositoryName := "RepoName"
+	repositoryName := "RepoName"
 
-	// tfOptions := &terraform.Options{
-	// 	// The path to where our Terraform code is located
-	// 	TerraformDir: "../examples/defaults",
+	tfOptions := &terraform.Options{
+		// The path to where our Terraform code is located
+		TerraformDir: "../examples/defaults",
 
-	// 	// EnvVars: map[string]string{
-	// 	// 	"TF_IN_AUTOMATION": "true",
-	// 	// },
+		// EnvVars: map[string]string{
+		// 	"TF_IN_AUTOMATION": "true",
+		// },
 
-	// 	// Variables to pass to our Terraform code using -var options
-	// 	Vars: map[string]interface{}{
-	// 		"required_name": repositoryName,
-	// 	},
+		// Variables to pass to our Terraform code using -var options
+		Vars: map[string]interface{}{
+			"required_name": repositoryName,
+		},
 
-	// 	NoColor: true,
-	// }
+		// NoColor: true,
+	}
 
 	log.Println("Hello World")
 	//
 	// Act
 	//
-	// defer terraform.Destroy(t, tfOptions)
+	defer terraform.Destroy(t, tfOptions)
 
 	// Run `terraform init`
 	// init, err := terraform.InitE(t, tfOptions)
