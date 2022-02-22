@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
@@ -34,13 +35,19 @@ func TestDefaultsExampleWithOnlyRequiredInputs(t *testing.T) {
 	defer terraform.Destroy(t, tfOptions)
 
 	// Run `terraform init`
-	terraform.Init(t, tfOptions)
+	init, err := terraform.InitE(t, tfOptions)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+	t.Log(init)
 
 	// Run `terraform plan`
-	terraform.Plan(t, tfOptions)
+	// terraform.Plan(t, tfOptions)
 
 	// Run `terraform apply`
-	terraform.Apply(t, tfOptions)
+	// terraform.Apply(t, tfOptions)
 
 	//
 	// Assert
