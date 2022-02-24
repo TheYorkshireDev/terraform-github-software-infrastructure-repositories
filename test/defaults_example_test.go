@@ -3,7 +3,6 @@ package main
 import (
 	"testing"
 
-	"github.com/gruntwork-io/terratest/modules/logger"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
@@ -30,7 +29,7 @@ func TestDefaultsExampleWithOnlyRequiredInputs(t *testing.T) {
 		NoColor: true,
 		// NoStderr: true,
 
-		Logger: logger.Discard,
+		// Logger: logger.Discard,
 	}
 
 	//
