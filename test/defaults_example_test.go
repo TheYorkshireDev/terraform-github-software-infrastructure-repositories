@@ -3,6 +3,7 @@ package main
 import (
 	"testing"
 
+	"github.com/gruntwork-io/terratest/modules/logger"
 	"github.com/gruntwork-io/terratest/modules/terraform"
 )
 
@@ -16,16 +17,20 @@ func TestDefaultsExampleWithOnlyRequiredInputs(t *testing.T) {
 		// The path to where our Terraform code is located
 		TerraformDir: "../examples/defaults",
 
-		// EnvVars: map[string]string{
-		// 	"TF_IN_AUTOMATION": "true",
-		// },
+		EnvVars: map[string]string{
+			"TF_IN_AUTOMATION": "true",
+			"TF_CLI_ARGS":      "-no-color",
+		},
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
 			"required_name": repositoryName,
 		},
 
-		// NoColor: true,
+		NoColor:  true,
+		NoStderr: true,
+
+		Logger: logger.Discard,
 	}
 
 	//
