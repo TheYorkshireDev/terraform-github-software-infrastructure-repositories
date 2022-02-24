@@ -27,8 +27,8 @@ func TestDefaultsExampleWithOnlyRequiredInputs(t *testing.T) {
 			"required_name": repositoryName,
 		},
 
-		NoColor:  true,
-		NoStderr: true,
+		NoColor: true,
+		// NoStderr: true,
 
 		Logger: logger.Discard,
 	}
