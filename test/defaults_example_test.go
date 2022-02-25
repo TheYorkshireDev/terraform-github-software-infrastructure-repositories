@@ -18,7 +18,7 @@ func TestDefaultsExampleWithOnlyRequiredInputs(t *testing.T) {
 
 		EnvVars: map[string]string{
 			"TF_IN_AUTOMATION": "true",
-			"TF_CLI_ARGS":      "-no-color",
+			// "TF_CLI_ARGS":      "-no-color",
 		},
 
 		// Variables to pass to our Terraform code using -var options
