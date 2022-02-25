@@ -16,10 +16,10 @@ func TestDefaultsExampleWithOnlyRequiredInputs(t *testing.T) {
 		// The path to where our Terraform code is located
 		TerraformDir: "../examples/defaults",
 
-		// EnvVars: map[string]string{
-		// 	"TF_IN_AUTOMATION": "true",
-		// 	// "TF_CLI_ARGS":      "-no-color",
-		// },
+		EnvVars: map[string]string{
+			"TF_IN_AUTOMATION": "true",
+			// "TF_CLI_ARGS":      "-no-color",
+		},
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
