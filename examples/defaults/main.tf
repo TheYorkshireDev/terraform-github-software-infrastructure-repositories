@@ -3,6 +3,11 @@ variable "required_name" {
   default     = "default-repo"
 }
 
+locals {
+  stuff   = ["a", "b", "c"]
+  instuff = index(local.stuff, "d")
+}
+
 module "default" {
   source = "../../"
   name   = var.required_name
